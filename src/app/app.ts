@@ -8,9 +8,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  title = 'my-app'; // ko dung const hay let
-  fullName = 'hoadv21';
-  age: number = 10;
+  title = 'Angular'; 
+  fullName = 'Anh Tai';
+  age: number = 20;
 
   // method: function
   sayHello() {
