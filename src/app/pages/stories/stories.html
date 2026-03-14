@@ -1,20 +1,62 @@
 <p class="title">Danh Sách Truyện Tranh</p>
 
+<table>
+<tr>
+<th>STT</th>
+<th>Tên Truyện</th>
+<th>Tác Giả</th>
+<th>Năm</th>
+<th>Thể Loại</th>
+<th>Lượt Xem</th>
+<th>Ảnh</th>
+<th>Hành Động</th>
+</tr>
+
 @for (story of stories; track story.title; let i = $index){
-    <div class="story-card">
+<tr>
 
-        <div class="stt">{{i + 1}}</div>
+<td>{{i+1}}</td>
+<td>{{story.title}}</td>
+<td>{{story.author}}</td>
+<td>{{story.year}}</td>
+<td>{{story.category}}</td>
+<td>{{story.views}}</td>
 
-        <h3>{{story.title}}</h3>
-        <p>Tác Giả: {{story.author}}</p>
-        <p>Năm Phát Hành: {{story.year}}</p>
-        <p>Thể Loại: {{story.category}}</p>
-        <p>Lượt xem: {{story.views}}</p>
+<td>
+<img [src]="story.image" width="80">
+</td>
 
-        <img [src]="story.image" alt="">
+<td>
+<button (click)="xemChiTiet(story)">Xem chi tiết</button>
+</td>
 
-        @if (story.views >=  90000){
-            <p class="hot">🔥 Truyện Hot</p>
-        }
-    </div>
+</tr>
+}
+
+</table>
+
+
+@if (storyChiTiet){
+
+<div class="popup">
+
+<div class="popup-box">
+
+<h2>{{storyChiTiet.title}}</h2>
+
+<p>Tác giả: {{storyChiTiet.author}}</p>
+<p>Năm: {{storyChiTiet.year}}</p>
+<p>Thể loại: {{storyChiTiet.category}}</p>
+<p>Lượt xem: {{storyChiTiet.views}}</p>
+
+<img [src]="storyChiTiet.image" width="150">
+
+<br><br>
+
+<button (click)="dongPopup()">Đóng</button>
+
+</div>
+
+</div>
+
 }
