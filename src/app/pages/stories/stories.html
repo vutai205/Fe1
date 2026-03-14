@@ -1,0 +1,20 @@
+<p class="title">Danh Sách Truyện Tranh</p>
+
+@for (story of stories; track story.title; let i = $index){
+    <div class="story-card">
+
+        <div class="stt">{{i + 1}}</div>
+
+        <h3>{{story.title}}</h3>
+        <p>Tác Giả: {{story.author}}</p>
+        <p>Năm Phát Hành: {{story.year}}</p>
+        <p>Thể Loại: {{story.category}}</p>
+        <p>Lượt xem: {{story.views}}</p>
+
+        <img [src]="story.image" alt="">
+
+        @if (story.views > 90000){
+            <p class="hot">🔥 Truyện Hot</p>
+        }
+    </div>
+}
