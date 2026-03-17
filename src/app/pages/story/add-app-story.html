@@ -1,0 +1,16 @@
+<h2>Thêm truyện tranh</h2>
+<form [formGroup]="addForm" (ngSubmit)="submitForm()">
+    <div>
+        <label for="">Tên Truyện</label>
+        <input type="text" formControlName="title" placeholder="Nhập tên truyện...">
+    </div>
+    <div>
+        <label for="">Tác Giả</label>
+        <input type="text" formControlName="author">
+    </div>
+    <div>
+        <label for="">Lượt Xem</label>
+        <input type="number" formControlName="views">
+    </div>
+    <button type="submit">Thêm Truyện</button>
+</form>

@@ -1,0 +1,16 @@
+<h2>Add Product</h2>
+<form action="" [formGroup]="addForm" (ngSubmit)="submitForm()">
+    <div>
+        <label for="">Tên Người Dùng</label>
+        <input type="text" formControlName="username">
+    </div>
+    <div>
+        <label for="">Email</label>
+        <input type="text" formControlName="email">
+    </div>
+    <div>
+        <label for="">Password</label>
+        <input type="number" formControlName="password">
+    </div>
+    <button type="submit">Thêm</button>
+</form>
